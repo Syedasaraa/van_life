@@ -28,7 +28,7 @@ function About () {
                   <div className="mt-4 bg-[#FFCC8D] h-[200px] rounded p-2">
                     <h1 className="text-[30px] font-bold mb-2 ">Your Destiny is waiting. Your Van is Ready</h1>
                     <div className=" bg-black text-white p-3 w-[150px] rounded-lg md:flex ">
-                      <Link to="/"> Explore our vans </Link>
+                      <Link to="/vans"> Explore our vans </Link>
                     </div>
                   </div>
                 </div>

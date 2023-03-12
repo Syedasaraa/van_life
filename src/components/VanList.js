@@ -4,13 +4,13 @@ import { Link } from "react-router-dom";
 const VanList = ({ content }) => {
   const colors = {
     simple: "#E17654",
-    rugged: "green-600",
+    rugged: "#115E59",
     luxury: "#161616",
   };
   const vanElements = content.map((van) => {
     return (
       <Link to={`/vans/${van.id}`} key={van.id}>
-        <div  key={van.id} className="lg:w-[60%] w-[90%] mx-auto mt-4">
+        <div  key={van.id} className="lg:w-[60%] w-[90%] mx-auto mt-4 ">
           <img src={van.imageUrl} />
           <div className="font-bold lg:text-[20px] md:text-[15px] flex justify-between whitespace-nowrap">
             <p>{van.name}</p>
@@ -28,7 +28,7 @@ const VanList = ({ content }) => {
       </Link>
     );
   });
-  return <div className="grid grid-cols-2">{vanElements}</div>;
+  return <div className="grid grid-cols-2 bg-[#FFF7ED]">{vanElements}</div>;
 };
 
 export default VanList;
