@@ -8,6 +8,7 @@ function Navbar () {
         > #VANLIFE </Link>
         <div className="flex gap-4">
         <Link to="/about"> About </Link>
+        <Link to="/vans"> Vans </Link>
         </div>
         </nav>
     )
