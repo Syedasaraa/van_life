@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
-import Button from "../components/Button";
-import { vanData } from "../components/data";
-import VanList from "../components/VanList";
+import Button from "../../components/Button";
+import { vanData } from "../../components/data";
+import VanList from "../../components/VanList";
 const Vans = () => {
   const [filter, setFilter] = useState();
   const [content, setContent] = useState(vanData);
@@ -11,7 +11,7 @@ const Vans = () => {
  
   
   return (
-    <div className="h-screen p-3 bg-[#FFF7ED]">
+    <div className="h-screen p-3 bg-[#FFF7ED] ">
       <h1 className="text-[30px] font-extrabold "> Explore our vans options</h1>
       <div className="flex gap-4 mt-2">
         <div className="cursor-pointer" onClick={(e) => setFilter("simple")}>

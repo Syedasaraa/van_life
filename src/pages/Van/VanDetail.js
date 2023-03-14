@@ -1,14 +1,14 @@
 import React from "react";
 import { useParams } from "react-router-dom";
-import { vanData } from "../components/data";
+import { vanData } from "../../components/data";
 
 const VanDetail = () => {
   const params = useParams();
   const details = vanData.map((van) => {
     if (van.id === params.id) {
       return (
-        <div className="w-full bg-[#FFF7ED]">
-          <div className="w-[30%] mx-auto ">
+        <div className="w-full " key={van.id}>
+          <div className="w-[75%] mx-auto mt-2">
             <img src={van.imageUrl} alt="van" />
             <div>
               <div>
@@ -29,6 +29,7 @@ const VanDetail = () => {
         </div>
       );
     }
+    return null;
   });
   return <div>{details}</div>;
 };

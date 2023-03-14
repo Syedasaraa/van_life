@@ -10,8 +10,8 @@ const VanList = ({ content }) => {
   const vanElements = content.map((van) => {
     return (
       <Link to={`/vans/${van.id}`} key={van.id}>
-        <div  key={van.id} className="lg:w-[60%] w-[90%] mx-auto mt-4 ">
-          <img src={van.imageUrl} />
+        <div key={van.id} className="lg:w-[60%] w-[90%] mx-auto mt-4">
+          <img src={van.imageUrl} alt=""/>
           <div className="font-bold lg:text-[20px] md:text-[15px] flex justify-between whitespace-nowrap">
             <p>{van.name}</p>
             <p> ${van.price}</p>{" "}
@@ -28,7 +28,11 @@ const VanList = ({ content }) => {
       </Link>
     );
   });
-  return <div className="grid grid-cols-2 bg-[#FFF7ED]">{vanElements}</div>;
+  return (
+    <div className="grid grid-cols-2 bg-[#FFF7ED]">
+      {vanElements ? vanElements : <div>...Loading </div>}
+    </div>
+  );
 };
 
 export default VanList;
