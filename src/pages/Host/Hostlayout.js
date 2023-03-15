@@ -6,27 +6,27 @@ const Hostlayout = () => {
     <div className="w-[95%] mx-auto">
       <nav className="flex gap-4 p-4 font-semibold ">
         <NavLink
-          to="/host"
+          to="."
           className={({ isActive }) => (isActive ? "text-red-500" : "")}
           end
         >
           Dashboard
         </NavLink>
         <NavLink
-          to="/host/income"
+          to="income"
           className={({ isActive }) => (isActive ? "text-red-500" : "")}
         >
           Income
         </NavLink>
         <NavLink
-          to="/host/reviews"
+          to="reviews"
           className={({ isActive }) => (isActive ? "text-red-500" : "")}
         >
           Reviews
         </NavLink>
 
         <NavLink
-          to="/host/vans"
+          to="vans"
           className={({ isActive }) => (isActive ? "text-red-500" : "")}
         >
           Vans

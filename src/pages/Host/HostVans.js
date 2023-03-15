@@ -4,7 +4,6 @@ import { useParams, Link , Outlet} from "react-router-dom";
 const HostVans = () => {
   const params = useParams();
   const [vans, setVans] = useState([]);
-
   useEffect(() => {
     fetch("/api/host/vans")
       .then((res) => res.json())
@@ -12,7 +11,7 @@ const HostVans = () => {
   }, [params]);
   
   const vanElemnets = vans.map(van => (
-    <Link to ={`/host/vans/${van.id}`} key={van.id}>
+    <Link to ={`${van.id}`} key={van.id} >
     <div className="flex bg-white gap-4 mb-4 mt-4 rounded">
       <img src={van.imageUrl} className="lg:w-[10%] w-[15%] rounded m-2"/>
       <div className="m-2">

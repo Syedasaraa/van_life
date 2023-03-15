@@ -1,15 +1,24 @@
 import React from "react";
-import { useParams } from "react-router-dom";
+import { useParams, useLocation, Link } from "react-router-dom";
 import { vanData } from "../../components/data";
 
 const VanDetail = () => {
   const params = useParams();
+  const location = useLocation();
+
   const details = vanData.map((van) => {
     if (van.id === params.id) {
       return (
         <div className="w-full " key={van.id}>
-          <div className="w-[75%] mx-auto mt-2">
-            <img src={van.imageUrl} alt="van" />
+          <div className="w-[75%] lg:w-[35%] mx-auto mt-2">
+            <Link
+              className="font-bold text-gray-500 hover:border-b-2 w-[120px] "
+              to={`..?${  location.state?.searchParam || "" }`}
+              relative="path"
+            >
+              &larr; Back to {location.state?.type ? location.state.type :"all" } vans
+            </Link>
+            <img src={van.imageUrl} alt="van" className="mt-4"/>
             <div>
               <div>
                 <div className="p-2 bg-[#E17654] w-[25%] text-center rounded text-white mt-2">
@@ -31,6 +40,7 @@ const VanDetail = () => {
     }
     return null;
   });
+  
   return <div>{details}</div>;
 };
 

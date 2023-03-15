@@ -7,8 +7,8 @@ function Navbar () {
         className="text-[20px] font-bold drop-shadow-md shadow-black"
         > #VANLIFE </Link>
         <div className="flex gap-4">
-        <Link to="/about"> About </Link>
-        <Link to="/vans"> Vans </Link>
+        <Link to="about"> About </Link>
+        <Link to="vans"> Vans </Link>
         </div>
         </nav>
     )

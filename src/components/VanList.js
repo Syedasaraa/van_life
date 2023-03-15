@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-const VanList = ({ content }) => {
+const VanList = ({ content , search ,typeFilter }) => {
   const colors = {
     simple: "#E17654",
     rugged: "#115E59",
@@ -9,7 +9,7 @@ const VanList = ({ content }) => {
   };
   const vanElements = content.map((van) => {
     return (
-      <Link to={`/vans/${van.id}`} key={van.id}>
+      <Link to={`${van.id}`} key={van.id} state={{searchParam: search , type:typeFilter}} >
         <div key={van.id} className="lg:w-[60%] w-[90%] mx-auto mt-4">
           <img src={van.imageUrl} alt=""/>
           <div className="font-bold lg:text-[20px] md:text-[15px] flex justify-between whitespace-nowrap">
