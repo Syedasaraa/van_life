@@ -1,15 +1,23 @@
-import React, { useEffect, useState } from "react";
-import { vanData } from "../../components/data";
+import React, {  useState } from "react";
 import VanList from "../../components/VanList";
-import { useSearchParams } from "react-router-dom";
+import { useSearchParams , useLoaderData } from "react-router-dom";
+import { getVans } from "../api";
+
+export const loader = () =>{
+ return getVans()
+}
 
 const Vans = () => {
+  const vanData = useLoaderData()
   const [searchParam, setSearchParams] = useSearchParams();
   const typeFilter = searchParam.get("type");
+
+ 
 
   const displayedvans = typeFilter
     ? vanData.filter((item) => item.type.trim() === typeFilter)
     : vanData;
+
 
   const setNewParams = (key, value) => {
     setSearchParams((prevParams) => {
@@ -21,6 +29,9 @@ const Vans = () => {
       return prevParams;
     });
   };
+
+ 
+  
 
   return (
     <div className="h-screen p-3 bg-[#FFF7ED] ">
@@ -60,7 +71,11 @@ const Vans = () => {
           </button>
         )}
       </div>
-      <VanList content={displayedvans} search={searchParam.toString()} typeFilter={typeFilter}/>
+      <VanList
+        content={displayedvans}
+        search={searchParam.toString()}
+        typeFilter={typeFilter}
+      />
     </div>
   );
 };
