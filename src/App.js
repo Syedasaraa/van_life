@@ -23,7 +23,7 @@ import HostVanPricing from "./pages/Host/HostVanPricing";
 
 import "./server";
 import Error from "./components/Error";
-import Login from "./pages/Login";
+import Login , {action as loginAction} from "./pages/Login";
 import AuthRequired from "./components/AuthRequired";
 
 const router = createBrowserRouter(
@@ -40,12 +40,15 @@ const router = createBrowserRouter(
         errorElement={<Error />}
       />
       <Route path="vans/:id" element={<VanDetail />} />
-      <Route path="login" element={<Login/>}/>
-       
+
+      <Route path="login" 
+      element={<Login/>} 
+      action={loginAction} />
+      
        <Route element={<AuthRequired/>}>
        <Route path="host" element={<Hostlayout />}>
         <Route index element={<Dashboard />} />
-        <Route path="income" element={<Income />} />\watch
+        <Route path="income" element={<Income />} />
         <Route path="reviews" element={<Review />} />
         <Route path="vans" element={<HostVans />} />
 
