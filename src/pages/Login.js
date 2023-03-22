@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import { useNavigate, useNavigation, useLocation , Form, useActionData} from "react-router-dom";
+import React, { useEffect } from "react";
+import { useNavigate, useNavigation, useLocation , Form, useActionData, Navigate} from "react-router-dom";
 import { loginUser } from "./api";
 
 export async function action ({request}) {
@@ -18,19 +18,26 @@ export async function action ({request}) {
 }
 
 export default function Login() {
-    const {state} = useLocation()
+    
     const navigate = useNavigate()
     const navigation = useNavigation()
     const actionData = useActionData()
-
-    if( actionData?.token ){
-     navigate(state? state.pathName : "/host" , {replace:true})
+    
+    console.log(location)
+     
+    const location = useLocation()
+    const from = location.state?.from || "/host";
+    useEffect(()=>{
+      if (actionData?.token) { //actionData checked if the user is logged in or not
+         navigate(from, { replace: true })
     }
+}, [actionData])
+
 
   return (
     <div className="w-[40%] mx-auto">
         <div>
-            {state&& <div className="text-center text-[20px] text-red-400">You must be logged in</div>}
+            { location.state?.message && <div className="text-center text-[20px] text-red-400">{ location.state?.message}</div>}
         </div>
       <h1 className="text-venter m-3 font-bold text-[30px] text-center">
         Sign in to your account

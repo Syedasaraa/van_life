@@ -41,6 +41,7 @@ const router = createBrowserRouter(
       />
       <Route path="vans/:id" 
       element={<VanDetail />} 
+      errorElement={<Error />}
       loader={vanDetailLoader}
       />
 
@@ -49,7 +50,7 @@ const router = createBrowserRouter(
       action={loginAction} />
 
        <Route element={<AuthRequired/>}>
-       <Route path="host" element={<Hostlayout />}>
+       <Route path="host" element={<Hostlayout />} errorElement={<Error />} >
         <Route index element={<Dashboard />} />
         <Route path="income" element={<Income />} />
         <Route path="reviews" element={<Review />} />

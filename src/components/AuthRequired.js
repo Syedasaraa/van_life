@@ -6,7 +6,7 @@ const AuthRequired = () => {
 
     if(!isLoggedIn){
         return <Navigate to="/login" 
-        state={{message : "You be logged in to view this page" , pathName : location.pathname} } 
+        state={{message : "You must be logged in to view this page" , from : location.pathname} } 
         replace/>
     }
     return <Outlet/>
