@@ -3,7 +3,7 @@ import { useOutletContext } from 'react-router-dom'
 
 const HostVanInfo = () => {
     const van= useOutletContext()
-    console.log(van)
+
   return (
     <div className='flex flex-col gap-4'>
        <p> <span className='font-bold'> Name : </span> {van.name} </p>
