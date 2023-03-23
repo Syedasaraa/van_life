@@ -6,7 +6,7 @@ const Home = () => {
  return (
         <div 
         className =
-        " flex flex-col justify-center items-center text-white h-screen bg-cover bg-no-repeat bg-[url('C:\Users\syeda.sara\Desktop\react_redux\van_life\public\53.png')]"
+        " h-[calc(100vh-118px)] flex flex-col justify-center items-center text-white  bg-cover bg-no-repeat bg-[url('C:\Users\syeda.sara\Desktop\react_redux\van_life\public\53.png')]"
         >   
             <div className="mb-4">
                 <h1 className="text-[30px]">You got the travel plans, we got the travel vans.</h1>

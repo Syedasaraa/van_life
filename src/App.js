@@ -28,9 +28,7 @@ import AuthRequired from "./components/AuthRequired";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
-    <Route path="/" element={<Layout />}
-    
-    > 
+    <Route path="/" element={<Layout />}> 
       <Route index element={<Home />} />
       <Route path="about" element={<About />} />
       <Route

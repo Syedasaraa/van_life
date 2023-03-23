@@ -7,7 +7,7 @@ const Layout = () => {
     <>
       <div className="min-h-[100vh] flex flex-col bg-[#FFF7ED]">
         <Header />
-        <Outlet />
+         <Outlet />
         <div className="mt-auto">
         <Footer />
         </div>

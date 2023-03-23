@@ -22,12 +22,12 @@ export default function Login() {
     const navigate = useNavigate()
     const navigation = useNavigation()
     const actionData = useActionData()
-    
-     
+  
+     console.log(actionData)
     const location = useLocation()
     const from = location.state?.from || "/host";
     useEffect(()=>{
-      if (actionData?.token) { //actionData checked if the user is logged in or not
+      if (actionData?.token) { //actionData checkes if the user is logged in or not
          navigate(from, { replace: true })
     }
 }, [actionData])
@@ -36,7 +36,7 @@ export default function Login() {
   return (
     <div className="w-[40%] mx-auto">
         <div>
-            { location.state?.message && <div className="text-center text-[20px] text-red-400 font-bold">{ location.state?.message}</div>}
+            { location.state?.message && <div className="text-center text-[20px] text-red-400">{ location.state?.message}</div>}
         </div>
       <h1 className="text-venter m-3 font-bold text-[30px] text-center">
         Sign in to your account
