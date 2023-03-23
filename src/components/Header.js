@@ -17,8 +17,8 @@ function Navbar() {
         <NavLink className={({isActive})=> isActive? "font-bold border-b-2 border-black" : ""} to="/vans"> Vans </NavLink>
         <NavLink className={({isActive})=> isActive? "font-bold border-b-2 border-black" : ""} to="/login"> {<BiUserCircle size={22} className="mt-1"/>} </NavLink>
         <div onClick={()=> localStorage.removeItem("loggedin")}
-        className="cursor-pointer"
-        >logout</div>
+        className="cursor-pointer text hover:border-b-2 hover:font-bold"
+        >Logout</div>
       </div>
     </nav>
   );
