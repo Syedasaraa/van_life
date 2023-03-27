@@ -14,6 +14,7 @@ const Home = () => {
             </div>
             <div className="w-[50%] bg-[#E17654] text-center p-2 rounded mt-3">
             <Link to="vans"
+            className=" bg-blue-500 p-2 px-3 w-[500px]"
             >Find your van</Link>
             </div>
             
