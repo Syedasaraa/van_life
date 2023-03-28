@@ -17,11 +17,11 @@ const db = getFirestore(app)
 
 const vansCollectionRef = collection( db, "vans")
 
-export async function getVans() {
-  const querySnapShot = getDocs(vansCollectionRef)
-  const dataArray = (await querySnapShot).docs.map(doc => ({
-    ...doc.data(),
-    id:doc.id
-  }))
-  return dataArray
-}
+// export async function getVans() {
+//   const querySnapShot = getDocs(vansCollectionRef)
+//   const dataArray = (await querySnapShot).docs.map(doc => ({
+//     ...doc.data(),
+//     id:doc.id
+//   }))
+//   return dataArray
+// }

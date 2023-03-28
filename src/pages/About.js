@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 function About () {
     return(
         (
-            <div className="h-screen">
+            <div className="h-[100%]">
               <div className="lg:h-[500px] h-[300px] ">
                 <img className="object-cover h-full w-full " src={image} alt="van" />
               </div>

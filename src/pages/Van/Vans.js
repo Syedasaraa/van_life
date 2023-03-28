@@ -1,5 +1,5 @@
 import React, {  Suspense } from "react";
-import VanList from "../../components/VanList";
+import VanList from "../Van/VanList";
 import { useSearchParams , useLoaderData , defer , Await} from "react-router-dom";
 import { getVans } from "../api";
 
@@ -78,7 +78,7 @@ const Vans = () => {
  }
 
   return (
-    <div className="h-screen p-3 bg-[#FFF7ED] ">
+    <div className="h-[100%] p-3 bg-[#FFF7ED] ">
       <h1 className="text-[30px] font-extrabold "> Explore our vans options</h1>
       <Suspense fallback={ <h1>Loading</h1>}>
       <Await resolve={vanDataPromise.vans} >

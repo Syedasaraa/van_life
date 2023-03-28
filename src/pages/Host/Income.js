@@ -7,7 +7,7 @@ export default function Income() {
         { amount: 980, date: "Dec 3, '22", id: "3" },
     ]
     return (
-        <section className="host-income">
+        <section >
             <h1 className="text-[45px] font-bold">Income</h1>
             <p className="text-gray-500 text-[20px] mb-4 mt-4">
                 Last <span className="font-bold border-b-2">30 days</span>

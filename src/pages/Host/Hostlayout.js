@@ -31,10 +31,15 @@ const Hostlayout = () => {
         >
           Vans
         </NavLink>
+        <div onClick={()=> localStorage.removeItem("loggedin")}
+        className="cursor-pointer text hover:border-b-2 hover:font-bold"
+        >Logout 
+        </div>
       </nav>
       <div className="ml-3">
       <Outlet />
       </div>
+      
     </div>
   );
 };
