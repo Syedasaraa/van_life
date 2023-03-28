@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { useNavigate, useNavigation, useLocation , Form, useActionData, Navigate} from "react-router-dom";
+import { useNavigate, useNavigation, useLocation , Form, useActionData} from "react-router-dom";
 import { loginUser } from "./api";
 
 export async function action ({request}) {
@@ -23,14 +23,13 @@ export default function Login() {
     const navigation = useNavigation()
     const actionData = useActionData()
   
-     console.log(actionData)
     const location = useLocation()
     const from = location.state?.from || "/host";
     useEffect(()=>{
       if (actionData?.token) { //actionData checkes if the user is logged in or not
          navigate(from, { replace: true })
     }
-}, [actionData])
+}, [actionData,from,navigate])
 
 
   return (
