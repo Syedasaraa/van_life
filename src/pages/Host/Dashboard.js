@@ -1,5 +1,5 @@
-import React , {Suspense} from "react"
-import { Link, defer, Await, useLoaderData } from "react-router-dom"
+import React from "react"
+import { Link, defer} from "react-router-dom"
 import { getHostVans } from "../api"
 import AuthRequired from "../../components/AuthRequired"
 import { BsStarFill } from "react-icons/bs"
@@ -10,7 +10,6 @@ export async function loader({ request }) {
 }
 
 export default function Dashboard() {
-    const vansPromise = useLoaderData()
 
     return (
         <>
